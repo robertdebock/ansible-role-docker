@@ -1,10 +1,9 @@
 ---
 # tasks file for docker
 - name: install software (yum)
-  yum: 
-    name: "{{ item }}"
-  with_items:
-    - docker
+  package: 
+    name: docker
+    state: present
 
 - name: start and enable docker
   systemd:
@@ -14,10 +13,8 @@
 
 - name: uninstall software (pip)
   pip:
-    name: "{{ item }}"
+    name: docker-py
     state: absent
-  with_items:
-    - docker-py
 
 - name: install software (pip)
   pip:
