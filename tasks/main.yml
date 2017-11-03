@@ -1,6 +1,6 @@
 ---
 # tasks file for docker
-- name: install software (yum)
+- name: install software
   package: 
     name: docker
     state: present
