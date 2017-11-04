@@ -4,11 +4,11 @@ language: python
 
 install:
   - role=$(basename $(pwd) | sed 's/ansible-role-//g')
-  - apt-get update
-  - apt-get -y install ansible
+  - sudo apt-get update
+  - sudo apt-get -y install ansible
 
 script:
-  - test -f requirements.yml && ansible-galaxy install --ignore-certs --role-file /etc/ansible/roles/${role}/requirements.yml || echo "No requirements.yml found."
+  - test -f requirements.yml && sudo ansible-galaxy install --ignore-certs --role-file /etc/ansible/roles/${role}/requirements.yml || echo "No requirements.yml found."
   - ansible-playbook --inventory /etc/ansible/roles/${role}/tests/inventory /etc/ansible/roles/${role}/tests/test.yml --syntax-check
   - ansible-playbook --inventory /etc/ansible/roles/${role}/tests/inventory /etc/ansible/roles/${role}/tests/test.yml --connection=local --become
 
