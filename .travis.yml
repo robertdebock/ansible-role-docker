@@ -3,12 +3,12 @@ sudo: required
 language: python
 
 install:
-  - role=$(basename $(pwd) | sed 's/ansible-role-//g')
   - sudo apt-get update
   - sudo apt-get -y install ansible
 
 script:
   - test -f requirements.yml && sudo ansible-galaxy install --role-file requirements.yml || echo "No requirements.yml found."
+  - ansible-galaxy install robertdebock.docker
   - ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
   - ansible-playbook --inventory tests/inventory tests/test.yml --connection=local
 
