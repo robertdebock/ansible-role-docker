@@ -2,6 +2,9 @@
 sudo: required
 language: python
 
+env:
+  - ANSIBLE_ROLES_PATH="/etc/ansible/roles:/home/travis"
+
 install:
   - sudo apt-get update
   - sudo apt-get -y install ansible
