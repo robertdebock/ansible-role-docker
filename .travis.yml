@@ -3,7 +3,7 @@ sudo: required
 language: python
 
 env:
-  - ANSIBLE_ROLES_PATH="/etc/ansible/roles:/home/travis/build/robertdebock"
+  - ANSIBLE_ROLES_PATH="/etc/ansible/roles:../"
 
 install:
   - sudo apt-get update
