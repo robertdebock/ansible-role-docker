@@ -1,4 +1,4 @@
-Role Name
+Docker
 =========
 
 Have Docker available.
@@ -26,7 +26,7 @@ Example Playbook
 - hosts: servers
   become: yes
   roles:
-    - docker
+    - robertdebock.docker
 ```
 
 License
