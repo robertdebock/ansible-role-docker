@@ -1,9 +1,19 @@
 ---
 # tasks file for docker
-- name: install software
+- name: install software with a recent version of ansible
   package: 
     name: docker
     state: present
+  when:
+    - ansible_product_version >= "2.0"
+
+- name: install software on debian with an old version of ansible
+  apt:
+    name: docker
+    update_cache: yes
+  when:
+    - ansible_product_version <= "2.0"
+    - ( ansible_distribution == "Debian" or ansible_distribution == "Ubuntu" )
 
 - name: start and enable docker
   systemd:
