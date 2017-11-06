@@ -7,22 +7,6 @@
   when:
     - ansible_product_version >= "2.0"
 
-- name: install software on debian systems with an old version of ansible
-  apt:
-    name: docker
-    update_cache: yes
-  when:
-    - ansible_product_version <= "2.0"
-    - ( ansible_distribution == "Debian" or ansible_distribution == "Ubuntu" )
-
-- name: install software on Red Hat systems with an old version of ansible
-  yum:
-    name: docker
-    update_cache: yes
-  when:
-    - ansible_product_version <= "2.0"
-    - ( ansible_distribution == "CentOS" or ansible_distribution == "Fedora" or ansible_distribution == "Red Hat Enterprise Linux" )
-
 - name: start and enable docker
   systemd:
     name: docker
