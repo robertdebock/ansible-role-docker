@@ -1,22 +1,11 @@
 ---
 language: python
 
-env:
-  - image_id=centos-7-x64
-  - image_id=centos-6-x64
-  - ansible_version=2.4.1.0
-  - ansible_version=1.9.6
-
 install:
-  - pip install "ansible==${ansible_version}"
-  - pip install "dopy"
-  - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_token=${api_token}" provision_machine.yml --connection=local
+  - pip install ansible
 
 script:
-  - ansible-playbook --inventory tests/inventory tests/test.yml
-
-after_script:
-  - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_token=${api_token}" decommission_machine.yml --connection=local
+  - ansible-playbook --inventory tests/inventory tests/test.yml --check
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
