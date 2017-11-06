@@ -2,8 +2,9 @@
 language: python
 
 stages:
+  - provision
   - test
-  - cleanup
+  - decommission
 
 env:
   - image_id: centos-6-x64
@@ -20,10 +21,17 @@ env:
 
 jobs:
   include:
+    - stage: provision
+      script:
+        - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" provision_machine.yml
+
     - stage: test
-      script: ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" provision_machine.yml
-    - stage: cleanup
-      script: ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" decommission_machine.yml
+      script:
+        - ansible-playbook --inventory tests/inventory tests/test.yml
+
+    - stage: decommission
+      script:
+        - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" decommission_machine.yml
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
