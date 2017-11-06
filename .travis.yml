@@ -15,6 +15,7 @@ env:
   - image_id: ubuntu-16-04-x64
 
 install:
+  - pip install -r requirements.txt
   - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" provision_machine.yml
 
 script:
