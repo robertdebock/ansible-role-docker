@@ -1,8 +1,8 @@
 ---
 - hosts: all
   tasks:
-  - digital_ocean:
-    state: absent
-    command: droplet
-    name: "{{ image_id }}"
-    api_token: "{{ api_token }}"
+    - digital_ocean:
+      state: absent
+      command: droplet
+      name: "{{ image_id }}"
+      api_token: "{{ api_token }}"
