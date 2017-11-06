@@ -5,7 +5,7 @@ env:
   - distro: centos:7
 
 install:
-  - echo "hoi"
+  - pip install ansible
 
 script:
   - ansible --version
