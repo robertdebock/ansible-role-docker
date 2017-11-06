@@ -19,13 +19,13 @@ env:
 
 install:
   - pip install "ansible==${ansible_version}"
-  - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" provision_machine.yml --connection=local
+  - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_token=${api_token}" provision_machine.yml --connection=local
 
 script:
   - ansible-playbook --inventory tests/inventory tests/test.yml
 
 after_script:
-  - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" decommission_machine.yml --connection=local
+  - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_token=${api_token}" decommission_machine.yml --connection=local
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
