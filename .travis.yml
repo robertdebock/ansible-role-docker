@@ -1,18 +1,14 @@
 ---
-sudo: required
 language: python
 
 env:
-  - ANSIBLE_ROLES_PATH="/etc/ansible/roles:../"
+  - distro: centos:7
 
 install:
-  - sudo apt-get update
-  - sudo apt-get -y install ansible
+  - echo "hoi"
 
 script:
-  - test -f requirements.yml && sudo ansible-galaxy install --role-file requirements.yml || echo "No requirements.yml found."
-  - ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
-  - ansible-playbook --inventory tests/inventory tests/test.yml --connection=local
+  - ansible --version
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
