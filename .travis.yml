@@ -22,7 +22,7 @@ jobs:
   include:
     - stage: test
       script: ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" provision_machine.yml
-    - script: cleanup
+    - stage: cleanup
       script: ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_key=${api_key}" decommission_machine.yml
 
 notifications:
