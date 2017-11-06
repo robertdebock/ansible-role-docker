@@ -5,11 +5,21 @@
     name: docker
     state: present
 
-- name: start and enable docker
+- name: start and enable docker using systemd
   systemd:
     name: docker
     state: started
     enabled: yes
+  when:
+    - ( ansible_distribution == "Fedora" or ( ansible_distribution == "Centos" and ansible_distribution_major_version == "7" )
+
+- name: start and enable docker using service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  when:
+    - ansible_distribution == "Alpine"
 
 - name: uninstall software (pip)
   pip:
