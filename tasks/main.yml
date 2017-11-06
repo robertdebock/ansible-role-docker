@@ -4,8 +4,6 @@
   package: 
     name: docker
     state: present
-  when:
-    - ansible_product_version >= "2.0"
 
 - name: start and enable docker
   systemd:
