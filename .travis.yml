@@ -19,6 +19,7 @@ env:
 
 install:
   - pip install "ansible==${ansible_version}"
+  - pip install -r requirements.txt
   - ansible-playbook --inventory tests/inventory --extra-vars="image_id=${image_id} api_token=${api_token}" provision_machine.yml --connection=local
 
 script:
