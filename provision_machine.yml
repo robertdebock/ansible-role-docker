@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-    - digital_ocean:
+  - digital_ocean:
     state: present
     command: droplet
     name: "{{ image_id }}
