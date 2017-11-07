@@ -8,6 +8,9 @@ install:
   - pip install ansible
 
 script:
+  - pwd
+  - ls
+  - find ./
   - ansible-playbook --inventory tests/inventory tests/test.yml --check
 
 notifications:
