@@ -1,9 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: decommission machine
-    digital_ocean:
-      state: absent
-      command: droplet
-      name: "{{ image_id }}"
-      api_token: "{{ api_token }}"
