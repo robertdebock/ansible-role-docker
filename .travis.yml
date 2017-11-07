@@ -1,5 +1,7 @@
 ---
 language: python
+sudo: required
+service: docker
 
 env:
   - ANSIBLE_ROLES_PATH: ../
