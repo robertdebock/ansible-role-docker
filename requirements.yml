@@ -1,1 +1,2 @@
-robertdebock.python-pip
+- name: robertdebock.python-pip
+  src: robertdebock.python-pip
