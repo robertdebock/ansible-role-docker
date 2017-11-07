@@ -8,9 +8,7 @@ install:
   - pip install ansible
 
 script:
-  - pwd
-  - ls
-  - find ./
+  - test -f requirements.yml && ansible-galaxy install --ignore-certs --role-file requirements.yml| echo "No requirements.yml found."
   - ansible-playbook --inventory tests/inventory tests/test.yml --check
 
 notifications:
