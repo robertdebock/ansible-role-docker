@@ -1,6 +1,9 @@
 ---
 language: python
 
+env:
+  - ANSIBLE_ROLES_PATH: ./roles
+
 install:
   - pip install ansible
 
