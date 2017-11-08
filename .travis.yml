@@ -3,6 +3,9 @@ language: python
 sudo: required
 service: docker
 
+notifications:
+  email: false
+
 env:
   - ANSIBLE_ROLES_PATH: ../
 
