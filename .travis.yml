@@ -3,9 +3,6 @@ language: python
 sudo: required
 service: docker
 
-notifications:
-  email: false
-
 env:
   - ANSIBLE_ROLES_PATH: ../
 
@@ -19,3 +16,4 @@ script:
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  email: false
