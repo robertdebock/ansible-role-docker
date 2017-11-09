@@ -5,6 +5,9 @@ galaxy_info:
   min_ansible_version: 2.0
 
   platforms:
+  - name: Alpine
+    versions:
+      - all
   - name: EL
     versions:
     - 6
@@ -13,6 +16,16 @@ galaxy_info:
     versions:
     - 25
     - 26
+  - name: Debian
+    versions:
+      - trusty
+      - stretch
+      - jessie
+  - name: Ubuntu
+    versions:
+      -  xenial
+      -  artful
+      -  zesty
 
   galaxy_tags:
     - docker
