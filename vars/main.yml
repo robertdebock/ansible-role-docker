@@ -1,6 +1,6 @@
 ---
 # vars file for docker
 packages:
-  - docker
+  - name: docker
     version: 2.5.1
-  - docker-compose
+  - name: docker-compose
