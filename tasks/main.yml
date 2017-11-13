@@ -1,5 +1,5 @@
 ---
-# tasks file for docker
+# tasks file for ansible-role-docker
 - name: install software
   package:
     name: docker

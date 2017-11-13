@@ -1,12 +1,12 @@
 Docker
 =========
 
-Have Docker available.
+Have Docker available on your system.
 
 Requirements
 ------------
 
-Pythons pip should be available. robertdebock.python-pip resolves this dependency.
+Pythons pip should be available. The configured robertdebock.python-pip resolves this dependency.
 
 Role Variables
 --------------
@@ -25,8 +25,17 @@ Example Playbook
 ---
 - hosts: servers
   become: yes
+
   roles:
     - robertdebock.docker
+
+  tasks:
+    - name: Create a data container
+      docker_container:
+        name: openssh
+        image: robertdebock/docker-centos-openssh
+        ports:
+        - "2222:22"
 ```
 
 License

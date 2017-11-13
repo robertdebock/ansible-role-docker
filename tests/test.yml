@@ -4,3 +4,11 @@
 
   roles:
     - ansible-role-docker
+
+  tasks:
+    - name: Create a data container
+      docker_container:
+        name: openssh
+        image: robertdebock/docker-centos-openssh
+        ports:
+        - "2222:22"
