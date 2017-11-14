@@ -21,4 +21,6 @@
     name: "{{ item.name }}"
     version: "{{ item.version | default(omit) }}"
   with_items:
-    - "{{ packages }}"
+    - name: docker
+      version: 2.5.1
+    - name: docker-compose
