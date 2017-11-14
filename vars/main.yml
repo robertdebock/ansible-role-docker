@@ -1,6 +1,6 @@
 ---
 # vars file for ansible-role-docker
 packages:
-  - name: docker
-    version: 2.5.1
-  - name: docker-compose
+- name: docker
+  version: 2.5.1
+- name: docker-compose
