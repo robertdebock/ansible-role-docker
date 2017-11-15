@@ -1,0 +1,15 @@
+---
+authentication:
+  access_token: DO_API_TOKEN
+
+ssh:
+  ssh_user: root
+  ssh_key_path: "~/mykey"
+  ssh_port: '22'
+
+defaults:
+  region: ams3
+  size: 512mb
+  private_networking: 'false'
+  backups_enabled: 'false'
+  ip6: 'false'

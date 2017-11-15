@@ -4,12 +4,11 @@ language: python
 env:
   matrix:
     - IMAGE=debian-8-x64
-    - IMAGE=centos-7-x64
 
 install:
-  - wget https://raw.githubusercontent.com/robertdebock/digitalocean/master/do.sh
-  - chmod +x do.sh
-  - ./do.sh -i
+  - gem install tugboat
+  - sed s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
+  - tugboat keys
 
 script:
   - echo "Creating droplets."
