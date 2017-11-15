@@ -9,19 +9,9 @@ env:
 install:
   - gem install tugboat
   - echo "Configuring tugboat"
-  - echo "---
-  authentication:
-    access_token: ${DO_API_TOKEN}
-  ssh:
-    ssh_user: root
-    ssh_key_path: '~/.ssh/id_rsa'
-    ssh_port: '22'
-  defaults:
-    region: ams3
-    size: 512mb
-    private_networking: 'false'
-    backups_enabled: 'false'
-    ip6: 'false'"
+  - echo "---" > .tugboat
+  - echo "authentication:" >> .tugboat
+  - echo "  access_token: ${DO_API_TOKEN}" >> .tugboat
   - tugboat images
   - echo "Generating ssh key"
   - ssh-keygen -N "" -f my-key
