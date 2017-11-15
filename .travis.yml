@@ -3,6 +3,7 @@ language: python
 
 install:
   - go get github.com/digitalocean/doctl/cmd/doctl
+  - find / -name doctl
   - ./go/bin/doctl auth init
 
 script:
