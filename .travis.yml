@@ -9,8 +9,8 @@ env:
 install:
   - wget https://raw.githubusercontent.com/robertdebock/digitalocean/master/do.sh
   - chmod +x do.sh
-  - do.sh -i
-  
+  - ./do.sh -i
+
 script:
   - echo "Creating droplets."
 
