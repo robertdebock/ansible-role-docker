@@ -20,7 +20,7 @@ env:
 install:
   - gem install tugboat
   - sed -i s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
-  - tugboat create ${IMAGE} -i ${IMAGE} -r ams2 -s 512 -k 914738
+  - tugboat create ${IMAGE} -i ${IMAGE} -r ams3 -s 512mb -k 914738
   - ip=$(tugboat info -n ${IMAGE} --porcelain -attribute ip)
 
 script:
