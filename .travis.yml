@@ -2,25 +2,33 @@
 language: python
 
 env:
-  global:
-    - TERM=xterm
   matrix:
     - IMAGE=debian-8-x64
     - IMAGE=centos-7-x64
 
 install:
-  - go get github.com/digitalocean/doctl/cmd/doctl
-  - ~/gopath/bin/doctl auth init --access-token "${DO_API_TOKEN}"
+  - gem install tugboat
+  - echo "Configuring tugboat"
+  - echo "---
+  authentication:
+    access_token: ${DO_API_TOKEN}
+  ssh:
+    ssh_user: root
+    ssh_key_path: '~/.ssh/id_rsa'
+    ssh_port: '22'
+  defaults:
+    region: ams3
+    size: 512mb
+    private_networking: 'false'
+    backups_enabled: 'false'
+    ip6: 'false'"
+  - tugboat images
   - echo "Generating ssh key"
   - ssh-keygen -N "" -f my-key
   - echo "Uploading ssh key"
-  - ~/gopath/bin/doctl/doctl compute ssh-key import new_key_name --public-key-file ~/.ssh/id_rsa.pub
-  - ~/gopath/bin/doctl/doctl compute ssh-key list
 
 script:
   - echo "Creating droplets."
-  - ~/gopath/bin/doctl/doctl compute droplet create ${IMAGE} --size 1gb --image ${IMAGE} --region ams3 --ssh-keys 4d:23:e6:e4:8c:17:d2:cf:89:47:36:b5:c7:33:40:4e
-  - ~/gopath/bin/doctl/doctl compute droplet list
 
 after_script:
   - echo "Removing ssh key"
