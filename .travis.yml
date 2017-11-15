@@ -21,8 +21,8 @@ install:
   - gem install tugboat
   - sed -i s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
   - tugboat create ${IMAGE} -i ${IMAGE} -r ams3 -s 512mb -k 914738
-  - tugboat info -n ${IMAGE} --attribute ip --porcelain
-  - ip=$(tugboat info -n ${IMAGE} --attribute ip --porcelain)
+  - tugboat info -n ${IMAGE} --attribute ip4 --porcelain
+  - ip=$(tugboat info -n ${IMAGE} --attribute ip4 --porcelain)
   - echo ${ip} tests/inventory
 
 script:
