@@ -21,13 +21,13 @@ install:
   - gem install tugboat
   - sed -i s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
   - tugboat create ${IMAGE} -i ${IMAGE} -r ams3 -s 512mb -k 914738
-  - ip=$(tugboat info -n ${IMAGE} --porcelain -attribute ip)
+  - ip=$(tugboat info -n ${IMAGE} --attribute ip --porcelain)
 
 script:
   - ping -c 60 ${ip}
 
 after_script:
-  - tugboat destroy ${IMAGE}
+  - yes | tugboat destroy ${IMAGE}
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
