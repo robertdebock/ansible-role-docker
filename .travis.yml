@@ -1,20 +1,12 @@
 ---
 language: python
-sudo: required
-service: docker
-
-env:
-  - ANSIBLE_ROLES_PATH: ../
 
 install:
-  - pip install ansible
-  - role=$(basename $(pwd) | sed 's/ansible-role-//g')
-  - ln -s ${ANSIBLE_ROLES_PATH}/$(basename $(pwd)) ${role}
+  - go get github.com/digitalocean/doctl/cmd/doctl
+  - ./go/bin/doctl auth init
 
 script:
-  - test -f requirements.yml && ansible-galaxy install --ignore-certs --role-file requirements.yml || echo "No requirements.yml found."
-  - ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
-  - ansible-playbook --inventory tests/inventory tests/test.yml --connection=local --become
+  - doctl compute droplet list
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
