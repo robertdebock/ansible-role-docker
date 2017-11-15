@@ -1,15 +1,22 @@
 ---
 language: python
 
+env:
+  - IMAGE=debian-8-x64
+
 install:
   - go get github.com/digitalocean/doctl/cmd/doctl
-  - cp ~gopath/bin/doctl /usr/local/bin
+  - cp ~/gopath/bin/doctl /usr/local/bin
   - doctl auth init
   - echo "Generating ssh key"
+  - ssh-keygen -N "" -f my-key
   - echo "Uploading ssh key"
+  - doctl compute ssh-key import new_key_name --public-key-file ~/.ssh/id_rsa.pub
+  - doctl compute ssh-key list	
 
 script:
   - echo "Creating droplets."
+  - doctl compute droplet create ${IMAGE} --size 1gb --image ${IMAGE} --region ams3 --ssh-keys 4d:23:e6:e4:8c:17:d2:cf:89:47:36:b5:c7:33:40:4e
   - doctl compute droplet list
 
 after_script:
