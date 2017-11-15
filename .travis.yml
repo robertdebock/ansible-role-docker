@@ -3,6 +3,7 @@ language: python
 
 env:
   - IMAGE=debian-8-x64
+  - TERM=vt220
 
 install:
   - go get github.com/digitalocean/doctl/cmd/doctl
