@@ -9,6 +9,9 @@ install:
 script:
   - doctl compute droplet list
 
+after_script:
+  - echo "Remove droplets."
+
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   email: false
