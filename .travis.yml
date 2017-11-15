@@ -9,9 +9,7 @@ env:
 install:
   - gem install tugboat
   - echo "Configuring tugboat"
-  - echo "---" > .tugboat
-  - echo "authentication:" >> .tugboat
-  - echo "  access_token: ${DO_API_TOKEN}" >> .tugboat
+  - sed 's/DO_API_TOKEN/'"${DO_API_TOKEN}"'/'
   - tugboat images
   - echo "Generating ssh key"
   - ssh-keygen -N "" -f my-key
