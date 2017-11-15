@@ -10,7 +10,7 @@ env:
 
 install:
   - go get github.com/digitalocean/doctl/cmd/doctl
-  - ~/gopath/bin/doctl auth init
+  - ~/gopath/bin/doctl auth init --access-token "${DO_API_TOKEN}"
   - echo "Generating ssh key"
   - ssh-keygen -N "" -f my-key
   - echo "Uploading ssh key"
