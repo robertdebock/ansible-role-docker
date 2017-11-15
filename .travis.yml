@@ -3,13 +3,17 @@ language: python
 
 install:
   - go get github.com/digitalocean/doctl/cmd/doctl
-  - find / -name doctl
-  - ./go/bin/doctl auth init
+  - cp ~gopath/bin/doctl /usr/local/bin
+  - doctl auth init
+  - echo "Generating ssh key"
+  - echo "Uploading ssh key"
 
 script:
+  - echo "Creating droplets."
   - doctl compute droplet list
 
 after_script:
+  - echo "Removing ssh key"
   - echo "Remove droplets."
 
 notifications:
