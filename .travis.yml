@@ -8,14 +8,14 @@ env:
 install:
   - gem install tugboat
   - sed s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
-  - tugboat keys
+  - tugboat create ${IMAGE} -i ${IMAGE}
+  - ip=$(tugboat info ${IMAGE} --porcelain -attribute ip)
 
 script:
-  - echo "Creating droplets."
+  - ping -c 60 ${ip}
 
 after_script:
-  - echo "Removing ssh key"
-  - echo "Remove droplets."
+  - tugboat destroy ${IMAGE}
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
