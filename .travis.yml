@@ -7,17 +7,10 @@ env:
     - IMAGE=centos-7-x64
 
 install:
-  - echo "Installing tugboat"
-  - gem install tugboat
-  - echo "Configuring tugboat"
-  - sed 's/DO_API_TOKEN/'"${DO_API_TOKEN}"'/' .tugboat
-  - tugboat images
-  - echo "Generating ssh key"
-  - ssh-keygen -N "" -f my-key
-  - echo "Uploading ssh key"
-  - tugboat add-key my-key.pub
-  - tugboat keys
-
+  - wget https://raw.githubusercontent.com/robertdebock/digitalocean/master/do.sh
+  - chmod +x do.sh
+  - do.sh -i
+  
 script:
   - echo "Creating droplets."
 
