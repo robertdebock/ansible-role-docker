@@ -10,6 +10,7 @@ env:
 install:
   - pip install ansible
   - gem install tugboat
+  - echo "${SSH_KEY_BASE64}" | base64 --decode > sshkey
   - sed -i s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
   - role=$(basename $(pwd) | sed 's/ansible-role-//g')
   - sudo mkdir -p /etc/ansible/roles/${role}
