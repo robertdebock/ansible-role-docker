@@ -1,2 +1,2 @@
-- name: robertdebock.epel
-  src: robertdebock.epel
+- name: robertdebock.python-pip
+  src: robertdebock.python-pip
