@@ -1,30 +1,20 @@
 ---
 language: python
+sudo: required
+service: docker
 
 env:
-  global:
-    - ANSIBLE_HOST_KEY_CHECKING: no
-  matrix:
-    - IMAGE=centos-7-x64
+  - ANSIBLE_ROLES_PATH: ../
 
 install:
   - pip install ansible
-  - gem install tugboat
-  - echo "${SSH_KEY_BASE64}" | base64 --decode > sshkey
-  - sed -i s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
   - role=$(basename $(pwd) | sed 's/ansible-role-//g')
-  - sudo mkdir -p /etc/ansible/roles/${role}
-  - sudo cp -Rip * /etc/ansible/roles/${role}
-  - test -f requirements.yml && ansible-galaxy install --role-file requirements.yml
-  - ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
-  - tugboat create ${IMAGE} -i ${IMAGE} -r ams3 -s 512mb -k 914738
-  - tugboat info -n ${IMAGE} --attribute ip4 --porcelain > tests/inventory
+  - ln -s ${ANSIBLE_ROLES_PATH}/$(basename $(pwd)) ${role}
 
 script:
-  - ansible-playbook --inventory tests/inventory tests/test.yml
-
-after_script:
-  - yes | tugboat destroy ${IMAGE}
+  - test -f requirements.yml && ansible-galaxy install --ignore-certs --role-file requirements.yml || echo "No requirements.yml found."
+  - ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
+  - ansible-playbook --inventory tests/inventory tests/test.yml --connection=local --become
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

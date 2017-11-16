@@ -10,12 +10,12 @@ galaxy_info:
       - all
   - name: EL
     versions:
-    - 6
-    - 7
+      - 6
+      - 7
   - name: Fedora
     versions:
-    - 25
-    - 26
+      - 25
+      - 26
   - name: Debian
     versions:
       - stretch
@@ -30,10 +30,10 @@ galaxy_info:
     - docker
     - Alpine
     - CentOS
-    - EL
+    - RHEL
     - Debian
     - Fedora
     - Ubuntu
 
 dependencies:
-  - robertdebock.python-pip
+  - robertdebock.bootstrap

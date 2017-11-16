@@ -1,26 +1,23 @@
 ---
 # tasks file for ansible-role-docker
+- name: include distribution specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "default.yml"
+
 - name: install software
   package:
-    name: docker
+    name: "{{ item }}"
     state: present
+  with_items:
+    - "{{ packages }}"
 
 - name: start and enable docker using service
   service:
-    name: docker
+    name: "{{ item }}"
     state: started
     enabled: yes
-
-- name: uninstall software (pip)
-  pip:
-    name: docker-py
-    state: absent
-
-- name: install software (pip)
-  pip:
-    name: "{{ item.name }}"
-    version: "{{ item.version | default(omit) }}"
   with_items:
-    - name: docker
-      version: 2.5.1
-    - name: docker-compose
+    - "{{ services }}"

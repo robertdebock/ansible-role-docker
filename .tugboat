@@ -1,5 +1,0 @@
----
-authentication:
-  access_token: DO_API_TOKEN
-ssh:
-  ssh_key_path: "sshkey"
