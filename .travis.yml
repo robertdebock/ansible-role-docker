@@ -32,7 +32,7 @@ install:
 script:
   - test -f requirements.yml && ansible-galaxy install --role-file requirements.yml
   - ansible-playbook --inventory tests/inventory tests/test.yml --syntax-check
-  - ansible-playbook --inventory tests/inventory tests/test.yml --become
+  - ansible-playbook --inventory tests/inventory tests/test.yml
 
 after_script:
   - yes | tugboat destroy ${IMAGE}
