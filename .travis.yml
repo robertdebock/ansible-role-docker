@@ -30,7 +30,7 @@ install:
   - tugboat info -n ${IMAGE} --attribute ip4 --porcelain > tests/inventory
 
 script:
-  - ansible-playbook --inventory tests/inventory tests/test.yml --become
+  - ansible-playbook --inventory tests/inventory tests/test.yml
 
 after_script:
   - yes | tugboat destroy ${IMAGE}
