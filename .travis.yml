@@ -1,6 +1,5 @@
 ---
 language: python
-sudo: required
 
 env:
   matrix:
@@ -19,11 +18,10 @@ env:
     - IMAGE=ubuntu-17-10-x64
 
 install:
-  - sudo apt-get install ansible
+  - pip install ansible
   - gem install tugboat
   - sed -i s/DO_API_TOKEN/${DO_API_TOKEN}/ .tugboat
   - tugboat create ${IMAGE} -i ${IMAGE} -r ams3 -s 512mb -k 914738
-  - tugboat info -n ${IMAGE} --attribute ip4 --porcelain
   - ip4=$(tugboat info -n ${IMAGE} --attribute ip4 --porcelain)
   - echo ${ip4} > tests/inventory
   - role=$(basename $(pwd) | sed 's/ansible-role-//g')
