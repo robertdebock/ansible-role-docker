@@ -14,9 +14,9 @@
     when:
       - inventory_hostname != "localhost"
 
-    - name: Create a data container
-      docker_container:
-        name: openssh
-        image: robertdebock/docker-centos-openssh
-        ports:
-        - "2222:22"
+  - name: Create a data container
+    docker_container:
+      name: openssh
+      image: robertdebock/docker-centos-openssh
+      ports:
+      - "2222:22"
