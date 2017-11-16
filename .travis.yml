@@ -2,6 +2,8 @@
 language: python
 
 env:
+  global:
+    - ANSIBLE_HOST_KEY_CHECKING: no
   matrix:
     - IMAGE=centos-7-x64
 
