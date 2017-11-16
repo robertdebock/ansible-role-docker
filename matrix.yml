@@ -1,0 +1,13 @@
+- IMAGE=centos-6-x64
+- IMAGE=centos-7-x64
+- IMAGE=coreos-alpha
+- IMAGE=coreos-stable
+- IMAGE=debian-7-x64
+- IMAGE=debian-8-x64
+- IMAGE=debian-9-x64
+- IMAGE=fedora-24-x64
+- IMAGE=fedora-25-x64
+- IMAGE=fedora-26-x64
+- IMAGE=ubuntu-14-04-x64
+- IMAGE=ubuntu-17-04-x64
+- IMAGE=ubuntu-17-10-x64
