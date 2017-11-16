@@ -14,6 +14,12 @@
   with_items:
     - "{{ packages }}"
 
+- name: install modules
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - "{{ modules }}"
+
 - name: start and enable docker using service
   service:
     name: "{{ item }}"

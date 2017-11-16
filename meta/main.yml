@@ -24,4 +24,4 @@ galaxy_info:
     - Fedora
 
 dependencies:
-  - robertdebock.epel
+  - robertdebock.python-pip

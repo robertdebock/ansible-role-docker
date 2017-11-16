@@ -1,6 +1,7 @@
 ---
 packages:
 - docker
-- docker-py
 services:
 - docker
+modules:
+- docker-py
