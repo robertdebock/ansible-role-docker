@@ -7,7 +7,7 @@
     - docker
 
   tasks:
-  - name: Create a data container
+  - name: Create a container
     docker_container:
       name: openssh
       image: robertdebock/docker-centos-openssh
