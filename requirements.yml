@@ -1,2 +1,2 @@
-- name: robertdebock.bootstrap
-  src: robertdebock.bootstrap
+- name: robertdebock.epel
+  src: robertdebock.epel

@@ -6,7 +6,8 @@ Have Docker available on your system.
 Requirements
 ------------
 
-Pythons pip should be available. The configured robertdebock.python-pip resolves this dependency.
+Access to a repository containing packages, likely on the internet.
+For Red Hat and CentOS systems these packages can be found in epel. Inlcude the role robertdebock.epel to get those repositories.
 
 Role Variables
 --------------
@@ -16,7 +17,7 @@ None known.
 Dependencies
 ------------
 
-robertdebock.python-pip
+robertdebock.epel
 
 Example Playbook
 ----------------
