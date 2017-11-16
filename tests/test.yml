@@ -7,14 +7,6 @@
     - docker
 
   tasks:
-  - name: lets wait.
-    wait_for:
-      host="{{ inventory_hostname }}"
-      port=22
-    delegate_to: localhost
-    when:
-      - inventory_hostname != "localhost"
-
   - name: Create a data container
     docker_container:
       name: openssh
