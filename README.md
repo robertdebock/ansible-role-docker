@@ -1,7 +1,7 @@
 Docker
 =========
 
-Have Docker available on your system.
+Have Docker (as provided by distribution) available on your system.
 
 Requirements
 ------------

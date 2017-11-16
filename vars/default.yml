@@ -1,5 +1,6 @@
 ---
 packages:
 - docker
+- docker-py
 services:
 - docker

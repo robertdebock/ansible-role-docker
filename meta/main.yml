@@ -10,30 +10,18 @@ galaxy_info:
       - all
   - name: EL
     versions:
-      - 6
       - 7
   - name: Fedora
     versions:
       - 25
       - 26
-  - name: Debian
-    versions:
-      - stretch
-      - jessie
-  - name: Ubuntu
-    versions:
-      -  xenial
-      -  artful
-      -  zesty
 
   galaxy_tags:
     - docker
     - Alpine
     - CentOS
     - RHEL
-    - Debian
     - Fedora
-    - Ubuntu
 
 dependencies:
   - robertdebock.epel
