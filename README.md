@@ -36,7 +36,7 @@ Example Playbook
   become: yes
 
   roles:
-    - robertdebock.ansible-role-docker
+    - ansible-role-docker
 
   tasks:
     - name: Create a data container
