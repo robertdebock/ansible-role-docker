@@ -1,0 +1,3 @@
+---
+# vars file for ansible-role-python-pip
+version: 9.0.1

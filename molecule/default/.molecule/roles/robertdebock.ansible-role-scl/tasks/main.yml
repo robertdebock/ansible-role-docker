@@ -1,0 +1,8 @@
+---
+# tasks file for ansible-role-scl
+- name: install centos-release-scl
+  package:
+    name: centos-release-scl
+    state: present
+  when:
+    - ( ansible_distribution == "CentOS" )

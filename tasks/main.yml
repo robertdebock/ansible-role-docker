@@ -20,7 +20,7 @@
   with_items:
     - "{{ modules }}"
 
-- name: start and enable docker using service
+- name: start and enable docker
   service:
     name: "{{ item }}"
     state: started

@@ -1,0 +1,19 @@
+---
+- hosts: all
+  remote_user: root
+
+  roles:
+    - ansible-role-epel
+
+  tasks:
+    - name: install package from EPEL
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - ansible-lint
+        - bats
+        - copr-cli
+        - drupal7
+      when:
+        - ( ansible_distribution == "CentOS" or ansible_distribution == "Red Hat Enterprise Linux" )

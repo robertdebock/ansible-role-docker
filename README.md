@@ -1,5 +1,7 @@
-Docker
+ansible-role-docker
 =========
+
+[![Build Status](https://travis-ci.org/robertdebock/ansible-role-docker.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-docker)
 
 Have Docker (as provided by distribution) available on your system.
 
@@ -7,8 +9,8 @@ Requirements
 ------------
 
 Access to a repository containing packages, likely on the internet.
-For Red Hat and CentOS systems these packages can be found in epel. Inlcude the role robertdebock.epel to get those repositories.
-docker-py installed by pip. Including the role robertdebock.python-pip is sufficient.
+For Red Hat and CentOS systems these packages can be found in epel. Inlcude the role robertdebock.ansible-role-epel to get those repositories.
+docker-py installed by pip. Including the role robertdebock.ansible-role-python-pip is sufficient.
 
 Role Variables
 --------------
@@ -18,7 +20,12 @@ None known.
 Dependencies
 ------------
 
-robertdebock.python-pip
+robertdebock.ansible-role-python-pip
+
+Download the dependencies by issueing this command:
+```
+ansible-galaxy install --role-file requirements.yml
+```
 
 Example Playbook
 ----------------
@@ -29,7 +36,7 @@ Example Playbook
   become: yes
 
   roles:
-    - robertdebock.docker
+    - robertdebock.ansible-role-docker
 
   tasks:
     - name: Create a data container

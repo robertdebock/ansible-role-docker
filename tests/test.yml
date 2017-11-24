@@ -3,7 +3,7 @@
   remote_user: root
 
   roles:
-    - docker
+    - role: ansible-role-docker
 
   tasks:
   - name: Create a container

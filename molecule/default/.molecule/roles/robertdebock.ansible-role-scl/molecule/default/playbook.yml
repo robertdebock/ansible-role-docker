@@ -1,0 +1,14 @@
+---
+- name: Converge
+  hosts: all
+
+  roles:
+    - role: ansible-role-scl
+
+  tasks:
+    - name: install a package from scl
+      package:
+        name: python27-python-pip
+        state: present
+      when:
+        - ( ansible_distribution == "CentOS" )
