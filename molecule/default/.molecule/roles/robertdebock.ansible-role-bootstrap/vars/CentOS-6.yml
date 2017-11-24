@@ -1,4 +1,0 @@
----
-packages:
-  - libselinux-python
-  - python-simplejson
