@@ -12,3 +12,5 @@
         image: robertdebock/docker-centos-openssh
         ports:
           - "2222:22"
+      when:
+        - ansible_virtualization_type != "docker"
