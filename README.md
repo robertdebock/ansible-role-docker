@@ -36,7 +36,7 @@ Example Playbook
   become: yes
 
   roles:
-    - ansible-role-docker
+    - robertdebock.ansible-role-docker
 
   tasks:
     - name: Create a data container
@@ -46,6 +46,8 @@ Example Playbook
         ports:
         - "2222:22"
 ```
+
+Install this role using `galaxy install robertdebock.ansible-role-nginx`.
 
 License
 -------
