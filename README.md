@@ -47,7 +47,7 @@ Example Playbook
         - "2222:22"
 ```
 
-Install this role using `galaxy install robertdebock.ansible-role-nginx`.
+Install this role using `galaxy install robertdebock.ansible-role-docker`.
 
 License
 -------
