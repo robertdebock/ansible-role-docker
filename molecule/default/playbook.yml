@@ -3,7 +3,7 @@
   hosts: all
 
   roles:
-    - role: docker
+    - role: ansible-role-docker
 
   tasks:
     - name: Create a container
