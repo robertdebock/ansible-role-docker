@@ -1,7 +1,7 @@
 docker
 =========
 
-[![Build Status](https://travis-ci.org/robertdebock.ansible-role-docker.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-docker)
+[![Build Status](https://travis-ci.org/robertdebock/ansible-role-docker.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-docker)
 
 Have Docker (as provided by distribution) available on your system.
 
