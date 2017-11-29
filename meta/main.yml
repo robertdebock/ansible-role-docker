@@ -35,4 +35,4 @@ galaxy_info:
     - Fedora
 
 dependencies:
-  - robertdebock.ansible-role-python-pip
+  - robertdebock.python-pip
