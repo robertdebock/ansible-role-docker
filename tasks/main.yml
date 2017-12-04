@@ -7,6 +7,30 @@
     - "{{ ansible_distribution }}.yml"
     - "default.yml"
 
+- name: prepare debian with apt-transport-https and apt-keh
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - apt-key
+  when:
+    - ansible_distribution == "Debian"
+
+- name: prepare debian with apt key
+  apt_key:
+    keyserver: pgp.mit.edu
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+  when:
+    - ansible_distribution == "Debian"
+
+- name: prepare debian with repository
+  apt_repository:
+    repo: deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }} main
+    state: present
+  when:
+    - ansible_distribution == "Debian"
+
 - name: install software
   package:
     name: "{{ item }}"

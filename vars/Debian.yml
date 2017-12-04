@@ -1,0 +1,8 @@
+---
+packages:
+  - docker-engine
+services:
+  - docker
+modules:
+  - docker-py
+  - docker-compose
