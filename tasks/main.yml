@@ -1,12 +1,5 @@
 ---
 # tasks file for docker
-- name: include distribution specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "docker.{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
-    - "docker.{{ ansible_distribution }}.yml"
-    - "docker.default.yml"
-
 - name: prepare debian with apt-transport-https
   package:
     name: "{{ item }}"
@@ -35,13 +28,17 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - "{{ docker_packages }}"
+    - "{{ docker_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+            | default(docker_packages[ansible_distribution]
+            | default(docker_packages['default'] )) }}"
 
 - name: install modules
   pip:
     name: "{{ item }}"
   with_items:
-    - "{{ docker_modules }}"
+    - "{{ docker_modules[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+        | default(docker_modules[ansible_distribution]
+        | default(docker_modules['default'] )) }}"
 
 - name: start and enable docker
   service:
@@ -49,6 +46,8 @@
     state: started
     enabled: yes
   with_items:
-    - "{{ docker_services }}"
+    - "{{ docker_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+        | default(docker_services[ansible_distribution]
+        | default(docker_services['default'] )) }}"
   when:
     - ansible_virtualization_type != "docker"
