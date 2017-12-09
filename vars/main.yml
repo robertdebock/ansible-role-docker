@@ -16,5 +16,4 @@ docker_services:
 
 docker_modules:
   default:
-    - docker-py
     - docker-compose
