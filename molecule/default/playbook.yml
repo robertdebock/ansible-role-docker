@@ -4,7 +4,7 @@
   gather_facts: no
 
   roles:
-    - role: robertdebock.docker
+    - role: ansible-role-docker
 
   tasks:
     - name: Create a container

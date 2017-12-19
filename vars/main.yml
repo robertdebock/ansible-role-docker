@@ -15,5 +15,8 @@ docker_services:
     - docker
 
 docker_modules:
+  CentOS-6:
+    - docker-compose
+    - docker-py
   default:
     - docker-compose
