@@ -34,11 +34,16 @@
 
 - name: install modules
   pip:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ docker_pip_executable[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+                | default(docker_pip_executable[ansible_distribution]
+                | default(docker_pip_executable['default']
+                | default(omit) )) }}"
   with_items:
-    - "{{ docker_modules[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-        | default(docker_modules[ansible_distribution]
-        | default(docker_modules['default'] )) }}"
+    - "{{ docker_pip_modules[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+        | default(docker_pip_modules[ansible_distribution]
+        | default(docker_pip_modules['default'] )) }}"
 
 - name: start and enable docker
   service:
