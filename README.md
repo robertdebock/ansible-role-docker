@@ -8,9 +8,11 @@ Have Docker (as provided by distribution) available on your system.
 Requirements
 ------------
 
-Access to a repository containing packages, likely on the internet.
+- Ansible 2.2 or higher.
+- Access to a repository containing packages, likely on the internet.
 For Red Hat and CentOS systems these packages can be found in epel. Inlcude the role robertdebock.epel to get those repositories.
-docker-py installed by pip. Including the role robertdebock.python-pip is sufficient.
+- docker-py installed by pip. Including the role robertdebock.python-pip is sufficient.
+- Alpine, CentOS 7 (not CentOS-6: python and pip are of an old version), Debian, Fedora, openSUSE or Ubuntu.
 
 Role Variables
 --------------

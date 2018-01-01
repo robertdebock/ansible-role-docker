@@ -15,11 +15,5 @@ docker_services:
     - docker
 
 docker_pip_modules:
-  CentOS-6:
-    - name: docker-compose
-    - name: docker-py
   default:
     - name: docker-compose
-
-docker_pip_executable:
-  CentOS-6: /opt/rh/python27/root/usr/bin/pip
