@@ -10,10 +10,14 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: docker-centos-6
+    box: centos/6
   - name: docker-centos-7
     box: centos/7
   - name: docker-debian-jessie64
     box: debian/jessie64
+  - name: docker-debian-buster64
+    box: desc/buster64
   - name: docker-fedora-26-cloud-base
     box: fedora/26-cloud-base
   - name: docker-fedora-27-cloud-base
@@ -22,8 +26,8 @@ platforms:
     box: opensuse/openSUSE-42.2-x86_64
   - name: docker-ubuntu-trusty
     box: ubuntu/trusty64
-  - name: docker-ubuntu-zesty
-    box: ubuntu/zesty64
+  - name: docker-ubuntu-artful
+    box: ubuntu/artful64
 provisioner:
   name: ansible
   lint:
@@ -31,6 +35,6 @@ provisioner:
 scenario:
   name: vagrant
 verifier:
-  name: testinfra
+  name: goss
   lint:
-    name: flake8
+    name: 'None'
