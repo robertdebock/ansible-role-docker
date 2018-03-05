@@ -5,6 +5,11 @@
   strategy: free
 
   roles:
+    - role: robertdebock.bootstrap
+    - role: roberdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.scl
+    - role: robertdebock.python-pip
     - role: ansible-role-docker
 
   tasks:

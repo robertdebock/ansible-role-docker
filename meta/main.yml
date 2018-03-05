@@ -39,5 +39,4 @@ galaxy_info:
     - Ubuntu
     - Fedora
 
-dependencies:
-  - robertdebock.python-pip
+dependencies: []

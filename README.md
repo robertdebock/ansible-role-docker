@@ -22,7 +22,12 @@ None known.
 Dependencies
 ------------
 
-robertdebock.python-pip
+You can use these roles to meet all dependencies.
+- robertdebock.bootstrap
+- roberdebock.buildtools
+- robertdebock.epel
+- robertdebock.scl
+- robertdebock.python-pip
 
 Download the dependencies by issuing this command:
 ```
@@ -38,7 +43,12 @@ Example Playbook
   become: yes
 
   roles:
-    - robertdebock.docker
+    - role: robertdebock.bootstrap
+    - role: roberdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.scl
+    - role: robertdebock.python-pip
+    - role: robertdebock.docker
 
   tasks:
     - name: Create a data container
