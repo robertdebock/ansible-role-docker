@@ -24,7 +24,7 @@ Dependencies
 
 You can use these roles to meet all dependencies.
 - robertdebock.bootstrap
-- roberdebock.buildtools
+- robertdebock.buildtools
 - robertdebock.epel
 - robertdebock.scl
 - robertdebock.python-pip
@@ -44,7 +44,7 @@ Example Playbook
 
   roles:
     - role: robertdebock.bootstrap
-    - role: roberdebock.buildtools
+    - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.scl
     - role: robertdebock.python-pip

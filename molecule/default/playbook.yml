@@ -6,7 +6,7 @@
 
   roles:
     - role: robertdebock.bootstrap
-    - role: roberdebock.buildtools
+    - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.scl
     - role: robertdebock.python-pip
