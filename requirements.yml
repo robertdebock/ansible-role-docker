@@ -1,6 +1,6 @@
 ---
 - robertdebock.bootstrap
-- roberdebock.buildtools
+- robertdebock.buildtools
 - robertdebock.epel
 - robertdebock.scl
 - robertdebock.python-pip
