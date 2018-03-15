@@ -15,6 +15,9 @@
     id: 58118E89F3A912897C070ADBF76221572C52609D
   when:
     - ansible_distribution == "Debian"
+  register: result
+  until: result is succeeded
+  retries: 3
 
 - name: prepare debian with repository
   apt_repository:
