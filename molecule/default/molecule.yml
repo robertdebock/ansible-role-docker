@@ -14,8 +14,6 @@ platforms:
     image: alpine:3.6
   - name: docker-alpine-3.7
     image: alpine:3.7
-  - name: docker-centos-6
-    image: centos:6
   - name: docker-centos-7
     image: centos:7
   - name: docker-debian-jessie
