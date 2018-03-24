@@ -8,6 +8,8 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: docker-debian-jessie
+    image: debian:jessie
 provisioner:
   name: ansible
   lint:
