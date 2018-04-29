@@ -28,15 +28,10 @@ platforms:
     image: opensuse:42.2
   - name: docker-opensuse-42.3
     image: opensuse:42.3
-    # 14.04 LTS
-  - name: docker-ubuntu-trusty
-    image: ubuntu:trusty
-    # 16.04 LTS
-  - name: docker-ubuntu-xenial
-    image: ubuntu:xenial
-    # 17.04
   - name: docker-ubuntu-artful
     image: ubuntu:artful
+  - name: docker-ubuntu-bionic
+    image: ubuntu:bionic
 provisioner:
   name: ansible
   lint:
