@@ -20,10 +20,10 @@ platforms:
     image: debian:jessie
   - name: docker-debian-stretch
     image: debian:stretch
-  - name: docker-fedora-26
-    image: fedora:26
   - name: docker-fedora-27
     image: fedora:27
+  - name: docker-fedora-28
+    image: fedora:28
   - name: docker-opensuse-42.2
     image: opensuse:42.2
   - name: docker-opensuse-42.3
