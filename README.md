@@ -30,11 +30,11 @@ Dependencies
 ------------
 
 You can use these roles to meet all dependencies.
-- robertdebock.bootstrap
-- robertdebock.buildtools
-- robertdebock.epel
-- robertdebock.scl
-- robertdebock.python-pip
+- [robertdebock.bootstrap](https://travis-ci.org/robertdebock/ansible-role-bootstrap)
+- [robertdebock.buildtools](https://travis-ci.org/robertdebock/ansible-role-buildtools)
+- [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel)
+- [robertdebock.scl](https://travis-ci.org/robertdebock/ansible-role-scl)
+- [robertdebock.python-pip](https://travis-ci.org/robertdebock/ansible-role-python-pip)
 
 Download the dependencies by issuing this command:
 ```
