@@ -1,0 +1,4 @@
+---
+# vars file for docker
+docker_packages:
+  - docker-engine

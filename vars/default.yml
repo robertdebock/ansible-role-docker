@@ -1,0 +1,9 @@
+---
+# vars file for docker
+docker_packages:
+  - docker
+
+docker_service: docker
+
+docker_pip_modules:
+  - name: docker-compose

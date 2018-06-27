@@ -31,27 +31,19 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - "{{ docker_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-            | default(docker_packages[ansible_distribution]
-            | default(docker_packages['default'] )) }}"
+    - "{{ docker_packages }}"
 
 - name: install modules
   pip:
     name: "{{ item.name }}"
     version: "{{ item.version | default(omit) }}"
   with_items:
-    - "{{ docker_pip_modules[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-        | default(docker_pip_modules[ansible_distribution]
-        | default(docker_pip_modules['default'] )) }}"
+    - "{{ docker_pip_modules }}"
 
 - name: start and enable docker
   service:
-    name: "{{ item }}"
+    name: "{{ docker_service }}"
     state: started
     enabled: yes
-  with_items:
-    - "{{ docker_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-        | default(docker_services[ansible_distribution]
-        | default(docker_services['default'] )) }}"
   when:
     - ansible_virtualization_type != "docker"
