@@ -12,10 +12,8 @@
 
 - name: prepare debian with apt-transport-https
   package:
-    name: "{{ item }}"
+    name: apt-transport-https
     state: present
-  with_items:
-    - apt-transport-https
   when:
     - ansible_distribution == "Debian"
 
