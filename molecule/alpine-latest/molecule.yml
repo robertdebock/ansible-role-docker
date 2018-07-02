@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker-opensuse-42.3
-    image: opensuse:42.3
+  - name: docker-alpine-latest
+    image: alpine:latest
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: opensuse-42.3
+  name: alpine-latest
 verifier:
   name: goss
   lint:

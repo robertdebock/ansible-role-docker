@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker-alpine-3.6
-    image: alpine:3.6
+  - name: docker-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: alpine-3.6
+  name: ubuntu-latest
 verifier:
   name: goss
   lint:

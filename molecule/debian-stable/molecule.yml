@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: docker-debian-buster
-    image: debian:buster
+  - name: docker-debian-stable
+    image: debian:stable
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: debian-buster
+  name: debian-stable
 verifier:
   name: goss
   lint:
