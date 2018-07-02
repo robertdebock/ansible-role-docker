@@ -37,10 +37,10 @@ galaxy_info:
 
   galaxy_tags:
     - docker
-    - Alpine
-    - CentOS
-    - RHEL
-    - Ubuntu
-    - Fedora
+    - alpine
+    - centos
+    - rhel
+    - ubuntu
+    - fedora
 
 dependencies: []
