@@ -18,7 +18,7 @@ Requirements
 - Ansible 2.2 or higher.
 - Access to a repository containing packages, likely on the internet.
 For Red Hat and CentOS systems these packages can be found in epel. Inlcude the role robertdebock.epel to get those repositories.
-- docker-py installed by pip. Including the role robertdebock.python-pip is sufficient.
+- docker-py installed by pip. Including the role robertdebock.python_pip is sufficient.
 - Alpine, CentOS 7 (not CentOS-6: python and pip are of an old version), Debian, Fedora, openSUSE or Ubuntu.
 
 Role Variables
@@ -34,7 +34,7 @@ You can use these roles to meet all dependencies.
 - [robertdebock.buildtools](https://travis-ci.org/robertdebock/ansible-role-buildtools)
 - [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel)
 - [robertdebock.scl](https://travis-ci.org/robertdebock/ansible-role-scl)
-- [robertdebock.python-pip](https://travis-ci.org/robertdebock/ansible-role-python-pip)
+- [robertdebock.python_pip](https://travis-ci.org/robertdebock/ansible-role-python_pip)
 
 Download the dependencies by issuing this command:
 ```
@@ -76,7 +76,7 @@ Example Playbook
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.scl
-    - role: robertdebock.python-pip
+    - role: robertdebock.python_pip
     - role: robertdebock.docker
 
   tasks:
