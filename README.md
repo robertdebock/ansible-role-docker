@@ -31,9 +31,7 @@ Dependencies
 
 You can use these roles to meet all dependencies.
 - [robertdebock.bootstrap](https://travis-ci.org/robertdebock/ansible-role-bootstrap)
-- [robertdebock.buildtools](https://travis-ci.org/robertdebock/ansible-role-buildtools)
 - [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel)
-- [robertdebock.scl](https://travis-ci.org/robertdebock/ansible-role-scl)
 - [robertdebock.python_pip](https://travis-ci.org/robertdebock/ansible-role-python_pip)
 
 Download the dependencies by issuing this command:
@@ -46,16 +44,15 @@ Compatibility
 
 This role has been tested against the following distributions and Ansible version:
 
-|distribution|ansible 2.3|ansible 2.4|ansible 2.5|
+|distribution|ansible 2.4|ansible 2.5|ansible 2.6|
 |------------|-----------|-----------|-----------|
-|alpine-latest|yes|yes|yes|
 |alpine-edge|yes|yes|yes|
+|alpine-latest|yes|yes|yes|
 |archlinux|yes|yes|yes|
 |centos-6|no|no|no|
 |centos-latest|yes|yes|yes|
-|debian-wheezy|no|no|no|
 |debian-latest|yes|yes|yes|
-|debian-stable|no|no|no|
+|debian-stable|yes|yes|yes|
 |fedora-latest|yes|yes|yes|
 |fedora-rawhide|yes|yes|yes|
 |opensuse-leap|yes|yes|yes|
