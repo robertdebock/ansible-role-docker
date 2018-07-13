@@ -5,8 +5,6 @@
 
   roles:
     - role: robertdebock.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.scl
     - role: robertdebock.python_pip
     - role: ansible-role-docker
 
