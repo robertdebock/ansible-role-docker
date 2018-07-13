@@ -70,9 +70,7 @@ Example Playbook
 
   roles:
     - role: robertdebock.bootstrap
-    - role: robertdebock.buildtools
     - role: robertdebock.epel
-    - role: robertdebock.scl
     - role: robertdebock.python_pip
     - role: robertdebock.docker
 
