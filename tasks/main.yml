@@ -13,7 +13,6 @@
 - name: prepare debian with apt-transport-https
   package:
     name: apt-transport-https
-    state: present
   when:
     - ansible_distribution == "Debian"
 
@@ -30,14 +29,12 @@
 - name: prepare debian with repository
   apt_repository:
     repo: deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }} main
-    state: present
   when:
     - ansible_distribution == "Debian"
 
 - name: install software
   package:
     name: "{{ item }}"
-    state: present
   with_items:
     - "{{ docker_packages }}"
 
