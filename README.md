@@ -15,7 +15,7 @@ Here is an overview of related roles:
 Requirements
 ------------
 
-- Ansible 2.2 or higher.
+- Ansible 2.4 or higher.
 - Access to a repository containing packages, likely on the internet.
 For Red Hat and CentOS systems these packages can be found in epel. Inlcude the role robertdebock.epel to get those repositories.
 - docker-py installed by pip. Including the role robertdebock.python_pip is sufficient.
@@ -31,7 +31,7 @@ Dependencies
 
 You can use these roles to meet all dependencies.
 - [robertdebock.bootstrap](https://travis-ci.org/robertdebock/ansible-role-bootstrap)
-- [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel)
+- [robertdebock.epel](https://travis-ci.org/robertdebock/ansible-role-epel) (Only for RHEL systems.)
 - [robertdebock.python_pip](https://travis-ci.org/robertdebock/ansible-role-python_pip)
 
 Download the dependencies by issuing this command:
