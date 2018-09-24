@@ -13,6 +13,7 @@
 - name: prepare debian with apt-transport-https
   package:
     name: apt-transport-https
+    state: present
   when:
     - ansible_distribution == "Debian"
 
@@ -20,6 +21,7 @@
   apt_key:
     keyserver: pgp.mit.edu
     id: 58118E89F3A912897C070ADBF76221572C52609D
+    state: present
   when:
     - ansible_distribution == "Debian"
   register: result
@@ -29,17 +31,20 @@
 - name: prepare debian with repository
   apt_repository:
     repo: deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }} main
+    state: present
   when:
     - ansible_distribution == "Debian"
 
 - name: install software
   package:
     name: "{{ item }}"
+    state: present
   with_items: "{{ docker_packages }}"
 
 - name: install modules
   pip:
     name: "{{ item.name }}"
+    state: present
     version: "{{ item.version | default(omit) }}"
   with_items: "{{ docker_pip_modules }}"
 
