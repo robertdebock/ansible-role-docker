@@ -1,7 +1,14 @@
 ---
 # vars file for docker
 docker_packages:
-  - docker
+  default:
+    - docker
+  CentOS:
+    - docker-io
+  Debian:
+    - docker-engine
+  Ubuntu:
+    - docker-engine
 
 docker_service: docker
 

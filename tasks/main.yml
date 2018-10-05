@@ -1,15 +1,5 @@
 ---
 # tasks file for docker
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
 - name: prepare debian with apt-transport-https
   package:
     name: apt-transport-https
@@ -35,11 +25,11 @@
   when:
     - ansible_distribution == "Debian"
 
-- name: install software
+- name: install docker
   package:
-    name: "{{ item }}"
-    state: present
-  with_items: "{{ docker_packages }}"
+    name: "{{ docker_packages[ansible_distribution]
+          | default(docker_packages['default'] }}"
+    state: "{{ docker_package_state }}"
 
 - name: install modules
   pip:
