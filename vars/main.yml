@@ -8,7 +8,7 @@ docker_packages:
   Debian:
     - docker-engine
   Ubuntu:
-    - docker-engine
+    - docker.io
 
 docker_service: docker
 
