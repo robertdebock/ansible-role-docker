@@ -1,6 +1,6 @@
 ---
 # vars file for docker
-docker_packages:
+_docker_packages:
   default:
     - docker
   CentOS:
@@ -9,6 +9,8 @@ docker_packages:
     - docker-engine
   Ubuntu:
     - docker.io
+
+docker_packages: "{{ _docker_packages[ansible_distribution] | default(_docker_packages['default']) }}"
 
 docker_service: docker
 

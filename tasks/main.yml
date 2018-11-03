@@ -27,8 +27,7 @@
 
 - name: install docker
   package:
-    name: "{{ docker_packages[ansible_distribution]
-          | default(docker_packages['default']) }}"
+    name: "{{ docker_packages }}"
     state: "{{ docker_package_state }}"
 
 - name: install modules
