@@ -20,7 +20,7 @@
 
 - name: prepare debian with repository
   apt_repository:
-    repo: deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }} main
+    repo: "{{ docker_apt_repository }}"
     state: present
   when:
     - ansible_distribution == "Debian"
