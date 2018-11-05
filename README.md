@@ -3,8 +3,7 @@ docker
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-docker.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-docker)
 
-Have Docker (as provided by distribution) available on your system.
-
+The purpose of this role is to install and configure Docker on your system.
 
 Example Playbook
 ----------------

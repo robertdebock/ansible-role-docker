@@ -1,1 +1,0 @@
-Have Docker (as provided by distribution) available on your system.
