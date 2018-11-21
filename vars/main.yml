@@ -1,5 +1,15 @@
 ---
 # vars file for docker
+_docker_requirements:
+  default: []
+  Debian:
+    - ca-certificates
+    - curl
+    - gnupg2
+    - software-properties-common
+
+docker_requirements: "{{ _docker_requirements[ansible_distribution] | default(_docker_requirements['default']) }}"
+
 _docker_packages:
   default:
     - docker
