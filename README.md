@@ -44,6 +44,11 @@ These variables are set in `defaults/main.yml`:
 # To update all packages installed by this roles, set `docker_package_state` to `latest`.
 docker_package_state: present
 
+# Some Docker containers do not allow managing services, rebooting and writing
+# to some locations in /etc. The role skips tasks that will typically fail in
+# Docker. With this parameter you can tell the role to -not- skip these tasks.
+docker_ignore_docker: yes
+
 ```
 
 Requirements
@@ -107,7 +112,7 @@ pip install molecule
 molecule test
 ```
 
-To test on Amazon EC2, configure [~/.aws/credentials[(https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html) and `export AWS_REGION=eu-central-1` before running `molecule test --scenario-name ec2`.
+To test on Amazon EC2, configure [~/.aws/credentials](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html) and `export AWS_REGION=eu-central-1` before running `molecule test --scenario-name ec2`.
 
 There are many specific scenarios available, please have a look in the `molecule/` directory.
 
