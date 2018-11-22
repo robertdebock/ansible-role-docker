@@ -83,11 +83,11 @@ This role has been tested against the following distributions and Ansible versio
 |------------|-----------|-----------|-----------|-----------|-------------|
 |alpine-edge*|yes|yes|yes|yes|yes*|
 |alpine-latest|yes|yes|yes|yes|yes*|
-|archlinux|yes|yes|yes|yes|yes*|
+|archlinux|no|no|no|no|no*|
 |centos-6|no|no|no|no|no*|
 |centos-latest|yes|yes|yes|yes|yes*|
-|debian-latest|no|no|no|no|no*|
-|debian-stable|no|no|no|no|no*|
+|debian-latest|no|no|no|no|yes*|
+|debian-stable|no|no|no|no|yes*|
 |debian-unstable*|no|no|no|no|no*|
 |fedora-latest|yes|yes|yes|yes|yes*|
 |fedora-rawhide*|yes|yes|yes|yes|yes*|
@@ -116,7 +116,7 @@ To test on Amazon EC2, configure [~/.aws/credentials](https://docs.aws.amazon.co
 
 There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-Run the [ansible-galaxy[(https://github.com/ansible/galaxy-lint-rules) and [my](https://github.com/robertdebock/ansible-lint-rules) lint rules if you want your change to be merges:
+Run the [ansible-galaxy](https://github.com/ansible/galaxy-lint-rules) and [my](https://github.com/robertdebock/ansible-lint-rules) lint rules if you want your change to be merges:
 ```
 ansible-lint -r /path/to/galaxy-lint-rules/rules .
 ansible-lint -r /path/to/ansible-lint-rules/rules .
