@@ -4,6 +4,9 @@
   package:
     name: "{{ docker_requirements }}"
     state: present
+  register: docker_prepare_debian_with_apt_transport_https
+  until: docker_prepare_debian_with_apt_transport_https is succeeded
+  retries: 3
 
 - name: prepare debian with apt key
   apt_key:
@@ -12,8 +15,8 @@
     state: present
   when:
     - ansible_distribution == "Debian"
-  register: result
-  until: result is succeeded
+  register: docker_prepare_debian_with_apt_key
+  until: docker_prepare_debian_with_apt_key is succeeded
   retries: 3
 
 - name: prepare debian with repository
@@ -27,6 +30,9 @@
   package:
     name: "{{ docker_packages }}"
     state: "{{ docker_package_state }}"
+  register: docker_install_docker
+  until: docker_install_docker is succeeded
+  retries: 3
 
 - name: install modules
   pip:
@@ -34,6 +40,9 @@
     state: present
     version: "{{ item.version | default(omit) }}"
   with_items: "{{ docker_pip_modules }}"
+  register: docker_install_modules
+  until: docker_install_modules is succeeded
+  retries: 3
 
 - name: start and enable docker
   service:
