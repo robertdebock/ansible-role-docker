@@ -34,6 +34,11 @@
   until: docker_install_docker is succeeded
   retries: 3
 
+- name: add docker group
+  group:
+    name: docker
+    system: yes
+
 - name: install modules
   pip:
     name: "{{ item.name }}"
@@ -51,3 +56,5 @@
     enabled: yes
   when:
     - ansible_virtualization_type != "docker" or docker_ignore_docker
+  notify:
+    - change owner for docker socket
