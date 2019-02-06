@@ -39,7 +39,7 @@
     name: docker
     system: yes
 
-- name: install modules
+- name: install pip modules
   pip:
     name: "{{ item.name }}"
     state: present
