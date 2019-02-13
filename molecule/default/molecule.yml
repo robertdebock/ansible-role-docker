@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: docker-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: docker-ubuntu-artful
-    image: ubuntu:artful
+  - name: docker-ubuntu-latest
+    image: ubuntu:latest
+  - name: docker-ubuntu-rolling
+    image: ubuntu:rolling
   - name: docker-ubuntu-devel
     image: ubuntu:devel
   - name: docker-ubuntu-latest

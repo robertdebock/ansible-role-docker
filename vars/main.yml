@@ -31,7 +31,8 @@ _docker_pip_modules:
   default:
     - name: docker-compose
   Debian: []
-  Fedora: []
+  Fedora:
+    - name: docker-py
   Ubuntu: []
 
 docker_pip_modules: "{{ _docker_pip_modules[ansible_distribution] | default(_docker_pip_modules['default']) }}"
