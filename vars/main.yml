@@ -15,26 +15,13 @@ _docker_packages:
     - docker
   CentOS:
     - docker-io
-    - docker-compose
-  Debian:
-    - docker-engine
-    - docker-compose
   Ubuntu:
     - docker.io
-    - docker-compose
+
 
 docker_packages: "{{ _docker_packages[ansible_distribution] | default(_docker_packages['default']) }}"
 
+docker_pip_packages:
+  - docker
+
 docker_service: docker
-
-_docker_pip_modules:
-  default:
-    - name: docker-compose
-  Debian: []
-  Fedora:
-    - name: docker-py
-  Ubuntu: []
-
-docker_pip_modules: "{{ _docker_pip_modules[ansible_distribution] | default(_docker_pip_modules['default']) }}"
-
-docker_apt_repository: "deb https://apt.dockerproject.org/repo {{ ansible_distribution | lower }}-{{ ansible_distribution_release | lower }} main"

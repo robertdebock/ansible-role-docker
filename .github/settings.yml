@@ -1,4 +1,4 @@
 ---
 repository:
-  description: Install and configure Docker on your system.
+  description: Install and configure Docker (non-CE) on your system.
   homepage: https://robertdebock.nl/

@@ -3,7 +3,7 @@ docker
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-docker.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-docker)
 
-Install and configure Docker on your system.
+Install and configure Docker (non-CE) on your system.
 
 Example Playbook
 ----------------
@@ -87,12 +87,12 @@ This role has been tested against the following distributions and Ansible versio
 |------------|-----------|-----------|-------------|
 |alpine-edge*|yes|yes|yes*|
 |alpine-latest|yes|yes|yes*|
-|archlinux|no|no|no*|
+|archlinux|yes|yes|yes*|
 |centos-6|no|no|no*|
 |centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
-|debian-unstable*|no|no|no*|
+|debian-unstable*|yes|yes|yes*|
 |fedora-latest|yes|yes|yes*|
 |fedora-rawhide*|yes|yes|yes*|
 |opensuse-leap|yes|yes|yes*|
