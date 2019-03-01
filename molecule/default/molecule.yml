@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: docker-opensuse-leap
     image: opensuse:leap
-  - name: docker-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: docker-ubuntu-latest
     image: ubuntu:latest
   - name: docker-ubuntu-rolling
