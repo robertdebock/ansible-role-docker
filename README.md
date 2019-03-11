@@ -41,9 +41,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for docker
-
-# To update all packages installed by this roles, set `docker_package_state` to `latest`.
-docker_package_state: present
 ```
 
 Requirements

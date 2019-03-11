@@ -3,7 +3,7 @@
 - name: install docker
   package:
     name: "{{ docker_packages }}"
-    state: "{{ docker_package_state }}"
+    state: present
   register: docker_install_docker
   until: docker_install_docker is succeeded
   retries: 3
@@ -11,7 +11,7 @@
 - name: install docker pip packages
   pip:
     name: "{{ docker_pip_packages }}"
-    state: "{{ docker_package_state }}"
+    state: present
   register: docker_install_docker_pip_packages
   until: docker_install_docker_pip_packages is succeeded
   retries: 3
