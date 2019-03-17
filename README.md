@@ -18,6 +18,16 @@ This example is taken from `molecule/default/playbook.yml`:
 
   roles:
     - robertdebock.docker
+
+  tasks:
+    - name: Create a container
+      docker_container:
+        name: openssh
+        image: robertdebock/docker-centos-openssh
+        ports:
+          - "2222:22"
+      when:
+        - ansible_virtualization_type != "docker"
 ```
 
 The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
@@ -31,16 +41,6 @@ The machine you are running this on, may need to be prepared. Tests have been do
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.python_pip
-
-  tasks:
-    - name: Create a container
-      docker_container:
-        name: openssh
-        image: robertdebock/docker-centos-openssh
-        ports:
-          - "2222:22"
-      when:
-        - ansible_virtualization_type != "docker"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
