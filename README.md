@@ -13,13 +13,24 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - robertdebock.docker
+```
+
+The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
 
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.python_pip
-    - robertdebock.docker
 
   tasks:
     - name: Create a container
