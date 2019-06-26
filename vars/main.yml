@@ -28,5 +28,6 @@ docker_packages: "{{ _docker_packages[ansible_distribution] | default(_docker_pa
 
 docker_pip_packages:
   - docker
+  - docker-compose
 
 docker_service: docker
