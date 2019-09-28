@@ -8,7 +8,7 @@ _docker_requirements:
     - gnupg2
     - software-properties-common
 
-docker_requirements: "{{ _docker_requirements[ansible_distribution] | default(_docker_requirements['default']) }}"
+docker_requirements: "{{ _docker_requirements[ansible_os_family] | default(_docker_requirements['default']) }}"
 
 _docker_packages:
   default:
