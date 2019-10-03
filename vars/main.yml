@@ -5,7 +5,6 @@ _docker_requirements:
   Debian:
     - ca-certificates
     - curl
-    - gnupg2
     - software-properties-common
 
 docker_requirements: "{{ _docker_requirements[ansible_os_family] | default(_docker_requirements['default']) }}"
