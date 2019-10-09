@@ -13,7 +13,7 @@ env:
   - version=">=2.7,<2.8" distro="archlinux"
   - version="" distro="archlinux"
   - version="devel" distro="archlinux"
-  - version=">=2.7,<2.8" distro="centos-7
+  - version=">=2.7,<2.8" distro="centos-7"
   - version="" distro="centos-7"
   - version="devel" distro="centos-7"
   - version=">=2.7,<2.8" distro="centos-latest"
