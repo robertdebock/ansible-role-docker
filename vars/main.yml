@@ -31,4 +31,8 @@ docker_pip_packages:
   - docker
   - docker-compose
 
-docker_service: docker
+_docker_service:
+  default: docker
+  RedHat-8: io.podman
+
+docker_service: "{{ _docker_service[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_docker_service['default']) }}"
