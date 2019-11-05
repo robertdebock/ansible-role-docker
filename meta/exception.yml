@@ -1,0 +1,4 @@
+---
+exceptions:
+  - variation: Ubuntu
+    reason: "Unable to find any of pip2, pip to use."

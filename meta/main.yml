@@ -27,17 +27,10 @@ galaxy_info:
     - name: OpenSUSE
       versions:
         - all
-    - name: Ubuntu
-      versions:
-        - artful
-        - bionic
 
   galaxy_tags:
     - docker
-    - alpine
     - centos
     - rhel
-    - ubuntu
-    - fedora
 
 dependencies: []
