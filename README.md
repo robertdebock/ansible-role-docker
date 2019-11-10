@@ -90,8 +90,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
-|amazonlinux|latest|no|
 |alpine|latest|no|
 |alpine|edge|yes|
 |debian|unstable|yes|
@@ -116,6 +114,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | Ubuntu | Unable to find any of pip2, pip to use. |
+| amazonlinux | Required dependency (python_pip) does not work on amazonlinux. |
 
 
 
