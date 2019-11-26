@@ -6,6 +6,8 @@ _docker_requirements:
     - ca-certificates
     - curl
     - software-properties-common
+  RedHat:
+    - python-devel
 
 docker_requirements: "{{ _docker_requirements[ansible_os_family] | default(_docker_requirements['default']) }}"
 
