@@ -3,7 +3,6 @@
 _docker_requirements:
   default: []
   Debian:
-    - ca-certificates
     - curl
     - software-properties-common
   RedHat:
