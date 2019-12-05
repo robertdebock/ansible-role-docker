@@ -120,7 +120,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux | Required dependency (python_pip) does not work on amazonlinux. |
 
 
-
 Testing
 -------
 
