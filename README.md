@@ -4,6 +4,8 @@ docker
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-docker"> <img src="https://travis-ci.org/robertdebock/ansible-role-docker.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/21647"/> <img src="https://img.shields.io/ansible/quality/21647"/>
 
+<a href="https://github.com/robertdebock/ansible-role-docker/actions"><img src="https://github.com/robertdebock/ansible-role-docker/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure Docker (non-CE) on your system.
 
 Example Playbook
