@@ -30,7 +30,6 @@ jobs:
       matrix:
         image:
           - alpine
-          - archlinux
           - debian
           - centos
           - fedora
