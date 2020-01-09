@@ -48,6 +48,10 @@ After running this role, this playbook runs to verify that everything works, thi
   gather_facts: yes
 
   tasks:
+    - name: Show ansible_virtualization_type
+      debug:
+        msg: "{{ ansible_virtualization_type }}"
+
     - name: Create a container
       docker_container:
         name: openssh
