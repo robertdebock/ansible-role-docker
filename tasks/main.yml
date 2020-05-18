@@ -27,7 +27,7 @@
     state: started
     enabled: yes
   notify:
-    - change owner for docker socket
+    - change group for docker socket
   when:
     - ansible_virtualization_type != "docker"
     - ansible_virtualization_type != "container"
