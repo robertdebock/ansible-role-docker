@@ -5,10 +5,6 @@
   gather_facts: yes
 
   tasks:
-    - name: Show ansible_virtualization_type
-      debug:
-        msg: "{{ ansible_virtualization_type }}"
-
     - name: Create a container
       docker_container:
         name: openssh
@@ -16,4 +12,4 @@
         ports:
           - "2222:22"
       when:
-        - ansible_virtualization_type != "docker"
+        - ansible_connection != "docker"

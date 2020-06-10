@@ -45,10 +45,6 @@ For verification `molecule/resources/verify.yml` run after the role has been app
   gather_facts: yes
 
   tasks:
-    - name: Show ansible_virtualization_type
-      debug:
-        msg: "{{ ansible_virtualization_type }}"
-
     - name: Create a container
       docker_container:
         name: openssh
@@ -56,7 +52,7 @@ For verification `molecule/resources/verify.yml` run after the role has been app
         ports:
           - "2222:22"
       when:
-        - ansible_virtualization_type != "docker"
+        - ansible_connection != "docker"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
