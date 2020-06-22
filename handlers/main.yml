@@ -2,5 +2,5 @@
 # handlers file for docker
 - name: change group for docker socket
   file:
-    path: /var/run/docker.sock
+    path: "{{ docker_socket }}"
     group: docker
