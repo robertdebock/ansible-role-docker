@@ -4,3 +4,4 @@
   file:
     path: "{{ docker_socket }}"
     group: docker
+    mode: "0640"
