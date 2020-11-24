@@ -1,5 +1,6 @@
 ---
 # handlers file for docker
+
 - name: change group for docker socket
   file:
     path: "{{ docker_socket }}"
