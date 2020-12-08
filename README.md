@@ -2,9 +2,9 @@
 
 Install and configure Docker (non-CE) on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-docker.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-docker)|[![github](https://github.com/robertdebock/ansible-role-docker/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-docker/actions)|[![quality](https://img.shields.io/ansible/quality/21647)](https://galaxy.ansible.com/robertdebock/docker)|[![downloads](https://img.shields.io/ansible/role/d/21647)](https://galaxy.ansible.com/robertdebock/docker)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-docker.svg)](https://github.com/robertdebock/ansible-role-docker/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-docker.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-docker)|[![github](https://github.com/robertdebock/ansible-role-docker/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-docker/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-docker/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-docker)|[![quality](https://img.shields.io/ansible/quality/21647)](https://galaxy.ansible.com/robertdebock/docker)|[![downloads](https://img.shields.io/ansible/role/d/21647)](https://galaxy.ansible.com/robertdebock/docker)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-docker.svg)](https://github.com/robertdebock/ansible-role-docker/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
