@@ -5,7 +5,7 @@
   gather_facts: no
 
   tasks:
-    - name: Create a container
+    - name: create a container
       docker_container:
         name: openssh
         image: robertdebock/docker-centos-openssh
@@ -13,3 +13,10 @@
           - "2222:22"
       when:
         - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
+
+    - name: make sure we are not running podman
+      command:
+        cmd: docker --version
+      register: docker_test_one
+      failed_when:
+        - '"podman" in dockter_test_one.sdout'
