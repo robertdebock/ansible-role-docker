@@ -15,8 +15,8 @@
         - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
 
     - name: make sure we are not running podman
-      command:
+      ansible.builtin.command:
         cmd: docker --version
       register: docker_test_one
       failed_when:
-        - '"podman" in dockter_test_one.sdout'
+        - '"podman" in docker_test_one.sdout'
