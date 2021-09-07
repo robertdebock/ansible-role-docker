@@ -69,7 +69,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |alpine|all|
-|el|8|
+|el|7|
 |debian|buster, bullseye|
 |fedora|all|
 |ubuntu|focal, bionic|

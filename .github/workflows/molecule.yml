@@ -36,7 +36,7 @@ jobs:
           - image: "alpine"
             tag: "latest"
           - image: "centos"
-            tag: "latest"
+            tag: "7"
           - image: "debian"
             tag: "latest"
           - image: "debian"
