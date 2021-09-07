@@ -19,4 +19,4 @@
         cmd: docker --version
       register: docker_test_one
       failed_when:
-        - '"podman" in docker_test_one.sdout'
+        - '"podman" in docker_test_one.stdout'
