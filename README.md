@@ -69,7 +69,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |container|tags|
 |---------|----|
 |alpine|all|
-|el|7|
 |debian|buster, bullseye|
 |fedora|all|
 |ubuntu|focal, bionic|
@@ -86,8 +85,10 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
-| Ubuntu | Unable to find any of pip2, pip to use. |
+| ubuntu | Unable to find any of pip2, pip to use. |
 | amazonlinux | Required dependency (python_pip) does not work on amazonlinux. |
+| centos:7 | python-pip broken. |
+| centos:8 | No docker or moby available. |
 
 
 If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-docker/issues)
