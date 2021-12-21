@@ -18,6 +18,19 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
 
   roles:
     - role: robertdebock.docker
+      docker_privileged_users:
+        - woody
+        - buzz
+
+  tasks:
+    - name: Create test case users
+      user:
+        name: "{{ user }}"
+      loop:
+        - woody
+        - buzz
+      loop_control:
+        loop_var: user
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
@@ -49,7 +62,7 @@ The default values for the variables are set in `defaults/main.yml`:
 # docker_privileged_users:
 #  - UserA
 #  - UserB
-docker_privileged_users:
+docker_privileged_users: []
 ```
 
 ## [Requirements](#requirements)

@@ -25,7 +25,7 @@
   loop_control:
     loop_var: user
   when:
-    - docker_privileged_users | length
+    - docker_privileged_users is defined
 
 - name: start and enable docker
   ansible.builtin.service:
