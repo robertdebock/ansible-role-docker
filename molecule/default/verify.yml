@@ -15,7 +15,7 @@
       changed_when: not docker_group is changed
       failed_when: docker_group is changed
 
-    - name: create a container
+    - name: Create a container
       docker_container:
         name: openssh
         image: robertdebock/docker-centos-openssh
@@ -24,7 +24,7 @@
       when:
         - ansible_connection not in [ "container", "docker", "community.docker.docker" ]
 
-    - name: make sure we are not running podman
+    - name: Make sure we are not running podman
       ansible.builtin.command:
         cmd: docker --version
       register: docker_test_one
