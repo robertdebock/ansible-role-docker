@@ -63,8 +63,8 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 
 # Add users to the privileged docker group. For example:
 # docker_privileged_users:
-#  - UserA
-#  - UserB
+#   - UserA
+#   - UserB
 docker_privileged_users: []
 ```
 
