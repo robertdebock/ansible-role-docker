@@ -4,9 +4,6 @@
 _docker_packages:
   default:
     - docker
-  Alpine:
-    - docker
-    - py3-docker
   Debian:
     - docker.io
     - python3-docker
