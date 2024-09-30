@@ -4,6 +4,9 @@
 _docker_packages:
   default:
     - docker
+  Alpine:
+    - docker
+    - py3-docker
   Debian:
     - docker.io
     - python3-docker
@@ -18,6 +21,7 @@ docker_packages: "{{ _docker_packages[ansible_os_family ~ '-' ~ ansible_distribu
 _docker_pip_packages:
   default:
     - docker
+  Alpine: []
   Debian: []
 
 docker_pip_packages: "{{ _docker_pip_packages[ansible_os_family] | default(_docker_pip_packages['default']) }}"
