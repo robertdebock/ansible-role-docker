@@ -13,7 +13,7 @@ _docker_packages:
   RedHat:
     - moby-engine
 
-docker_packages: "{{ _docker_packages[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_docker_packages[ansible_os_family] | default(_docker_packages['default'] )) }}"
+docker_packages: "{{ _docker_packages[ansible_facts['os_family'] ~ '-' ~ ansible_facts['distribution_major_version']] | default(_docker_packages[ansible_facts['os_family']] | default(_docker_packages['default'] )) }}"
 
 _docker_pip_packages:
   default:
@@ -21,12 +21,12 @@ _docker_pip_packages:
   Alpine: []
   Debian: []
 
-docker_pip_packages: "{{ _docker_pip_packages[ansible_os_family] | default(_docker_pip_packages['default']) }}"
+docker_pip_packages: "{{ _docker_pip_packages[ansible_facts['os_family']] | default(_docker_pip_packages['default']) }}"
 
 _docker_service:
   default: docker
   RedHat: "docker"
 
-docker_service: "{{ _docker_service[ansible_os_family] | default(_docker_service['default']) }}"
+docker_service: "{{ _docker_service[ansible_facts['os_family']] | default(_docker_service['default']) }}"
 
 docker_socket: /var/run/docker.sock
